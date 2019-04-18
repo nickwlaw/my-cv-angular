@@ -11,15 +11,17 @@ export class EducationComponent implements OnInit {
   name: string = 'Max Tech';
   dates: string = 'Oct 2018 - May 2019';
   major: string = 'Java';
-  minor: string = '';
+  minor: string = 'MySQL';
 
   constructor() { }
 
   ngOnInit() {
   }
+
   updateSample(sample: string): string {
     return this.sample = sample;
   }
+  
   displayEduSum(): string {
     let eduSum: string = '';
     eduSum += 'Attended ' + this.name + ' from ' + this.dates + ' with a major in ' + this.major;
@@ -31,5 +33,4 @@ export class EducationComponent implements OnInit {
     }
     return eduSum;
   }
-
 }
