@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { User } from '../model/User.class';
+import { JsonResponse } from '../model/json-response.class';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
-const url: string = 'http://localhost:8080/users/';
+const url = 'http://localhost:8080/users/';
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +11,8 @@ const url: string = 'http://localhost:8080/users/';
 
 export class UserService {
 
-  list(): Observable<User[]> {
-    return this.http.get(url) as Observable<User[]>;
+  list(): Observable<JsonResponse> {
+    return this.http.get(url) as Observable<JsonResponse>;
   }
 
   constructor(private http: HttpClient) { }
